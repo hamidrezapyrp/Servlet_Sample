@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        a{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(138, 34, 151, 0.808);
+            color: rgb(194, 218, 210);
+            text-decoration: none;
+            padding: 10px;
+            margin-top: 30px;
+        }
+        body{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+<script>
+    alert("Successful login")
+    function sub(){
+        return alert("Registered information")
+    }
+</script>
+<h1 style="padding: 10px;">Welcome <%=request.getAttribute("user")%></h1>
+<form action="\index.html" method="get">
+    <label for="txb">Custom text</label>
+    <input type="text" id="txb" name="txb">
+
+    <button type="submit" value="submit" onclick="sub()" style="padding: 10px;">Save</button>
+</form>
+<br>
+<br>
+<hr>
+<a href="/index.html">home</a>
+</body>
+</html>
