@@ -45,7 +45,7 @@ public class Register extends HttpServlet {
                    "            margin-top: 30px;\n" +
                    "        }\n" +
                    "        body{\n" +
-                   "            background-color: cadetblue;\n" +
+                   "            background-color: rgb(236, 236, 170);\n" +
                    "        }\n" +
                    "    </style>\n" +
                    "</head>\n" +
@@ -57,7 +57,7 @@ public class Register extends HttpServlet {
                    "    }\n" +
                    "</script>");
               out.println("<h1>Username:</h1>" + list.get(0));
-              out.println("<form action=\"\\index.html\" method=\"get\">\n" +
+              out.println("<form action=\"\\Comment\" method=\"Post\">\n" +
                       "    <label for=\"txb\">Custom text</label>\n" +
                       "    <input type=\"text\" id=\"txb\" name=\"txb\">\n" +
                       "\n" +
@@ -69,10 +69,11 @@ public class Register extends HttpServlet {
                       "<a href=\"/index.html\">home</a>\n" +
                       "</body>\n" +
                       "</html>");
-              list.add(2,req.getParameter("txb"));
+
 
         }else if (list.get(0).equalsIgnoreCase("admin")&& list.get(1).equalsIgnoreCase("admin")){
-               resp.sendRedirect("/Admin");
+              RequestDispatcher rd = req.getRequestDispatcher("Admin");
+              rd.forward(req,resp);
 
         }
         else{

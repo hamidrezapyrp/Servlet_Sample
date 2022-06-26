@@ -14,9 +14,9 @@ public class Admin extends HttpServlet {
         super();
     }
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        Register.list.add(2,req.getParameter("txb"));
+         Comment comment = new Comment();
 
         out.println("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
@@ -36,13 +36,13 @@ public class Admin extends HttpServlet {
                 "            margin-top: 30px;\n" +
                 "        }\n" +
                 "        body{\n" +
-                "            background-color: cadetblue;\n" +
+                "            background-color: rgb(236, 236, 170);\n" +
                 "        }\n" +
                 "    </style>\n" +
                 "</head>\n" +
                 "<body>");
         out.println("<h1>Username:</h1>" + Register.list.get(0));
-        out.println("<p style=\"color: rgb(185, 189, 247);\">"+Register.list.get(2)+"<p>");
+        out.println("<p style=\"color: rgb(179, 18, 31);\">"+comment.comment()+"<p>");
         out.println("<a href=\"/index.html\">home</a>");
         out.println("</body>\n" +
                 "</html>");
